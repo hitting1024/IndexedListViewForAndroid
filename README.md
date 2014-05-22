@@ -8,15 +8,15 @@ IndexedListView is a ListView with Index like iOS.
 
 [Usege]
 
-1. Set the IndexedListView library.
+1 . Set the IndexedListView library.
 
 ![setting](https://raw.githubusercontent.com/hitting1024/IndexedListViewForAndroid/master/imgs/setting01.png)
 
-2. Add IndexedListView to a layout xml.
+2 . Add IndexedListView to a layout xml.
 
 ![layout](https://raw.githubusercontent.com/hitting1024/IndexedListViewForAndroid/master/imgs/xml.png)
 
-3. Set a indexList and a sectionIndexMap
+3 . Set a indexList and a sectionIndexMap
 
 ![java](https://raw.githubusercontent.com/hitting1024/IndexedListViewForAndroid/master/imgs/java.png)
 
