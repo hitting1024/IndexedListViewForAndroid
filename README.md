@@ -7,6 +7,7 @@ IndexedListView is a ListView with Index like iOS.
 
 
 [Usege]
+
 1. Set the IndexedListView library.
 
 ![setting](https://raw.githubusercontent.com/hitting1024/IndexedListViewForAndroid/master/imgs/setting01.png)
@@ -20,7 +21,7 @@ IndexedListView is a ListView with Index like iOS.
 ![java](https://raw.githubusercontent.com/hitting1024/IndexedListViewForAndroid/master/imgs/java.png)
 
 
-
+--------
 The MIT License (MIT)
 
 Copyright (c) 2014 IOKA
