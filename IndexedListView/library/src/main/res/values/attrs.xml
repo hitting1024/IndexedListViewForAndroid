@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="IndexedListView">
+        <attr name="index_color" format="color" />
+        <attr name="index_size" format="dimension" />
+    </declare-styleable>
+
+</resources>
