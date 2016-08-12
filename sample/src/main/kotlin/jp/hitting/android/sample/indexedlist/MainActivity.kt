@@ -13,15 +13,12 @@ class MainActivity : Activity() {
         this.setContentView(R.layout.activity_main)
 
         val items = createItems()
-        val indexList = ArrayList<String>()
-        val sectionIndexMap = HashMap<String, Int>()
-        loadIndex(items, indexList, sectionIndexMap)
+        val indexList = loadIndex(items)
 
-        val listview = this.findViewById(R.id.listview) as IndexedListView
-        val adapter = ArrayAdapter(this,
-                android.R.layout.simple_list_item_1, items)
-        listview.adapter = adapter
-        listview.setIndex(indexList, sectionIndexMap)
+        val listView = this.findViewById(R.id.listview) as IndexedListView
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, items)
+        listView.adapter = adapter
+        listView.setIndex(indexList)
     }
 
     private fun createItems(): List<String> {
@@ -31,16 +28,17 @@ class MainActivity : Activity() {
         return items
     }
 
-    private fun loadIndex(items: List<String>, indexList: MutableList<String>,
-                          sectionIndexMap: MutableMap<String, Int>) {
+    private fun loadIndex(items: List<String>): MutableList<Pair<String, Int>> {
+        val indexList = ArrayList<Pair<String, Int>>()
         var prevC = ""
         for (i in items.indices) {
             val c = items[i].substring(0, 1)
             if (c != prevC) {
-                indexList.add(c)
-                sectionIndexMap.put(c, i)
+                indexList.add(Pair(c, i))
                 prevC = c
             }
         }
+        return indexList
     }
+
 }
