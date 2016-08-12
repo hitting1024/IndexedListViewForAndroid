@@ -19,8 +19,7 @@ class IndexedListView(context: Context, attrs: AttributeSet) : RelativeLayout(co
         private var indexTextSize: Float = 12f
     }
 
-    private var indexList: List<String>? = null
-    private var sectionIndexMap: Map<String, Int>? = null
+    private var indexList: List<Pair<String, Int>>? = null
 
     private val listView: ListView
     private val indexLayout: LinearLayout
@@ -48,15 +47,16 @@ class IndexedListView(context: Context, attrs: AttributeSet) : RelativeLayout(co
         this.addView(this.indexLayout, params)
     }
 
-    fun setIndex(indexList: List<String>,
-                 sectionIndexMap: Map<String, Int>) {
+    /**
+     * @param indexList the pair of (index key, jump position) list.
+     */
+    fun setIndex(indexList: List<Pair<String, Int>>) {
         this.indexList = indexList
-        this.sectionIndexMap = sectionIndexMap
 
         this.indexLayout.removeAllViews()
-        for (indexStr in this.indexList!!) {
+        for (index in this.indexList!!) {
             val textView = TextView(this.context)
-            textView.text = indexStr
+            textView.text = index.first
             textView.gravity = Gravity.CENTER
             textView.textSize = indexTextSize
             textView.setTypeface(Typeface.DEFAULT, Typeface.BOLD)
@@ -71,13 +71,14 @@ class IndexedListView(context: Context, attrs: AttributeSet) : RelativeLayout(co
     }
 
     private fun moveSection(x: Float, y: Float) {
-        var position = (y / (this.listView.height / this.indexList!!.size)).toInt()
+        val size = this.indexList!!.size
+        var position = (y / (this.listView.height / size)).toInt()
         if (position < 0) {
             position = 0
-        } else if (position >= this.indexList!!.size) {
-            position = this.indexList!!.size - 1
+        } else if (position >= size) {
+            position = size - 1
         }
-        val sectionPosition = this.sectionIndexMap!![this.indexList!![position]]!!
+        val sectionPosition = this.indexList!![position].second
         this.listView.setSelection(sectionPosition)
     }
 
