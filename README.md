@@ -13,19 +13,19 @@ IndexedListView is a ListView with Index like iOS.
 ```gradle
 repositories {
     maven {
-      url 'https://hitting1024.github.io/IndexedListViewForAndroid/repository'
+        url 'https://hitting1024.github.io/IndexedListViewForAndroid/repository'
     }
 }
 
 dependencies {
-  compile 'jp.hitting.android:indexed-listview:0.0.1'
+    compile 'jp.hitting.android:indexed-listview:0.0.1'
 }
 ```
 
 ### Manual Installation
 
 * Download source code.
-* Add ResizableGridView.java and attrs.xml to your project.
+* Add IndexedListView.kt and attrs.xml to your project.
 
 
 ## Requirements
