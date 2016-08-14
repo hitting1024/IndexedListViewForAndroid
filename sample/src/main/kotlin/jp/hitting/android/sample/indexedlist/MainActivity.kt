@@ -2,6 +2,7 @@ package jp.hitting.android.sample.indexedlist
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Pair
 import android.widget.ArrayAdapter
 import jp.hitting.android.view.IndexedListView
 import java.util.*

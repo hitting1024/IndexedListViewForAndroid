@@ -6,22 +6,94 @@ IndexedListView is a ListView with Index like iOS.
 ![Screen Shot](https://raw.githubusercontent.com/hitting1024/IndexedListViewForAndroid/master/imgs/ss.png)
 
 
-[Usege]
+## How To Get Started
 
-1 . Set the IndexedListView library.
+### Installation with Gradle
 
-![setting](https://raw.githubusercontent.com/hitting1024/IndexedListViewForAndroid/master/imgs/setting01.png)
+```gradle
+repositories {
+    maven {
+        url 'https://hitting1024.github.io/IndexedListViewForAndroid/repository'
+    }
+}
 
-2 . Add IndexedListView to a layout xml.
+dependencies {
+    compile 'jp.hitting.android:indexed-listview:0.0.1'
+}
+```
 
-![layout](https://raw.githubusercontent.com/hitting1024/IndexedListViewForAndroid/master/imgs/xml.png)
+### Manual Installation
 
-3 . Set a indexList and a sectionIndexMap
+* Download source code.
+* Add IndexedListView.kt and attrs.xml to your project.
 
-![java](https://raw.githubusercontent.com/hitting1024/IndexedListViewForAndroid/master/imgs/java.png)
+
+## Requirements
+
+Android 2.2.x or higher.
 
 
---------
+## Usage
+
+### Set up
+
+Define a layout of jp.hitting.android.view.IndexedListView in layout.xml.
+
+IndexedListView has the following attributes.
+
+* index_color: the color of index labels (default White)
+* index_size: the size of index labels (default 12sp)
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <jp.hitting.android.view.IndexedListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:index_color="#0000ff"
+        app:index_size="8sp" />
+
+</RelativeLayout>
+```
+
+Set the pair (index label, its position) list
+
+```java
+// ListView has "apple", "ape", "animal", "android", "boy", "ball", "cat", "cow", ...
+List<android.util.Pair<String, Integer>> indexList = new ArrayList<>();
+indexList.add(new Pair<String, Integer>("a", 0));
+indexList.add(new Pair<String, Integer>("b", 4));
+indexList.add(new Pair<String, Integer>("c", 6));
+  ...
+IndexedListView listView = (IndexedListView)this.findViewById(R.id.listView);
+listView.setIndex(indexList);
+```
+
+## Example
+
+See the sample module.
+
+
+
+## Credits
+
+IndexedListView was created by [IOKA Masakazu](http://www.hitting.jp).
+
+
+
+## License
+
 The MIT License (MIT)
 
 Copyright (c) 2014 IOKA

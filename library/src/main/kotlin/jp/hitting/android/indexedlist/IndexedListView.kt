@@ -1,4 +1,4 @@
-package jp.hitting.android.view
+package jp.hitting.android.indexedlist
 
 import android.content.Context
 import android.graphics.Color
@@ -33,14 +33,14 @@ class IndexedListView(context: Context, attrs: AttributeSet) : RelativeLayout(co
         typedAry.recycle()
 
         this.listView = ListView(this.context)
-        this.addView(this.listView, RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT))
+        this.addView(this.listView, LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT))
 
         this.indexLayout = LinearLayout(this.context)
         this.indexLayout.setPadding(10, 5, 10, 5)
         this.indexLayout.orientation = LinearLayout.VERTICAL
-        this.indexLayout.setHorizontalGravity(RelativeLayout.ALIGN_PARENT_RIGHT)
-        val params = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.MATCH_PARENT)
-        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT)
+        this.indexLayout.setHorizontalGravity(ALIGN_PARENT_RIGHT)
+        val params = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT)
+        params.addRule(ALIGN_PARENT_RIGHT)
         this.indexLayout.setOnTouchListener { view, motionEvent ->
             this.moveSection(motionEvent.getX(), motionEvent.getY())
             return@setOnTouchListener true
