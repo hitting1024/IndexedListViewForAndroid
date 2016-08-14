@@ -4,7 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.util.Pair
 import android.widget.ArrayAdapter
-import jp.hitting.android.view.IndexedListView
+import jp.hitting.android.indexedlist.IndexedListView
 import java.util.*
 
 class MainActivity : Activity() {
@@ -16,7 +16,7 @@ class MainActivity : Activity() {
         val items = createItems()
         val indexList = loadIndex(items)
 
-        val listView = this.findViewById(R.id.listview) as IndexedListView
+        val listView = this.findViewById(R.id.listView) as IndexedListView
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, items)
         listView.adapter = adapter
         listView.setIndex(indexList)

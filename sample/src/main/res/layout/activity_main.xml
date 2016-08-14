@@ -10,8 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <jp.hitting.android.view.IndexedListView
-        android:id="@+id/listview"
+    <jp.hitting.android.indexedlist.IndexedListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:index_color="#0000ff"
