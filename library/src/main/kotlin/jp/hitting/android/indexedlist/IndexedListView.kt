@@ -11,7 +11,6 @@ import android.view.Gravity
 import android.view.View
 import android.widget.*
 import android.widget.AdapterView.*
-import jp.hitting.android.view.R
 
 class IndexedListView(context: Context, attrs: AttributeSet) : RelativeLayout(context, attrs) {
 
