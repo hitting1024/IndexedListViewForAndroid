@@ -37,7 +37,7 @@ Android 2.2.x or higher.
 
 ### Set up
 
-Define a layout of jp.hitting.android.view.IndexedListView in layout.xml.
+Define a layout of jp.hitting.android.indexedlist.IndexedListView in layout.xml.
 
 IndexedListView has the following attributes.
 
@@ -57,7 +57,7 @@ IndexedListView has the following attributes.
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <jp.hitting.android.view.IndexedListView
+    <jp.hitting.android.indexedlist.IndexedListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
